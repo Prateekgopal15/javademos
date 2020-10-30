@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh 'echo "Hello World!!!"'
         sh 'mvn -f javademos-master/ssgsems/pom.xml -B -DskipTests clean package'
-        archiveArtifacts(artifacts: '**/target/*war', fingerprint: true)
+        archiveArtifacts(artifacts: '**/target/*.war', fingerprint: true)
         sh '''echo "mkdir /source/buildoutput/${BUILD_NUMBER}"
 
 mkdir /source/buildoutput/${BUILD_NUMBER}
